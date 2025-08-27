@@ -1,0 +1,13 @@
+.jobsection-container {
+  background-color: rgb(255, 255, 255);
+  padding: 60px 0;
+  min-height: 100vh;
+}
+
+.left-box {
+  background-color: black;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+}

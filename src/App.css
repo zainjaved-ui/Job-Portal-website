@@ -1,0 +1,12 @@
+/* .App {
+  text-align: center;
+} */
+body {
+  font-family: 'Figtree', sans-serif;
+}
+
+:root {
+  --primary-green: #309689;
+  --light-bg: rgb(234, 244, 243);
+}
+

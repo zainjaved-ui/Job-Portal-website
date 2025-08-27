@@ -1,0 +1,203 @@
+.home-container {
+  position: relative;
+  /* background-color: wheat; */
+  text-align: center;
+  padding: 150px 20px;
+  min-height: 100vh;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+}
+.main-heading {
+  /* styles here */
+  font-size: 4.3rem;
+}
+
+.sub-text{
+    font-size: 20px;
+}
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./img1.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px) brightness(0.7);
+  transform: scale(1.05); /* Fix white edges */
+  z-index: -2;
+}
+
+.home-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Overlay to hide edge + darken */
+  z-index: -1;
+}
+
+
+/* Main content stays sharp */
+.main-heading,
+.sub-text,
+.search-bar,
+.stats {
+  position: relative;
+  z-index: 2;
+}
+
+.search-bar {
+  display: flex;
+  max-width: 900px;       /* 🔸 Wider bar */
+  margin: 20px auto 35px auto;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.search-input {
+    appearance: none;              /* Remove default arrow (for consistency) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 14px 40px 14px 16px;  /* ⬅️ right padding gives room for arrow */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23309689' d='M2 4l4 4 4-4z'/%3E%3C/svg%3E");  /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  font-size: 1.1rem;
+  height: 56px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 0;
+}
+
+.search-input:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+/* Search button: right border rounding */
+.search-btn {
+  font-size: 1.1rem;
+  padding: 14px 24px;      /* 🔸 Bigger button */
+  height: 56px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+   border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #309689;
+  color: white;
+  border: 1px solid #309689;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+
+.search-input:hover {
+  background-color: white;  /* inherits from parent */
+}
+
+/* Optional: hover effect */
+.search-btn:hover {
+  background-color: #26796e; /* hover shade of primary green */
+}
+
+.stat-box {
+  display: flex;
+  align-items: center;
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* backdrop-filter: blur(5px); */
+  /* border-radius: 10px; */
+  padding: 25px 20px;
+  margin: 5px;
+  /* color: #fff; */
+  width: 170px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); */
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #309689;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.stat-text h4 {
+  margin: 0;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+
+
+
+
+/* Large screens (600px and up) */
+@media (min-width: 1000px) and (max-width: 1900px) {
+  .home-container {
+    padding: 90px 20px;
+    min-height: 80vh;
+  }
+  .search-bar {
+    max-width: 900px;
+    margin: 40px auto 35px auto;
+}
+}
+
+@media (min-width: 604px) and (max-width: 1000px) {
+  .home-container {
+    padding: 50px 20px;
+    min-height: 40vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column;
+  }
+  
+  .search-input, .search-btn {
+    width: 100% !important; /* Force full width */
+    margin-bottom: 8px; /* Space between stacked items */
+  }
+  
+  .search-btn {
+    margin-top: 5px; /* Extra space above button */
+  }
+
+
+}
+
+@media (max-width: 527px) {
+  .stats{
+    flex-direction: column;
+    align-items: center;
+  }
+
+.stat-box {
+  padding: 10px 20px;
+  margin: 5px;
+  width: 170px;
+}
+  .home-container {
+    padding: 30px 20px;
+    min-height: 80vh;
+}
+}

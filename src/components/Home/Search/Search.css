@@ -1,0 +1,61 @@
+.hero-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  height: 320px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Optional: dark overlay to improve text contrast */
+.hero-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+/* Content styles */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 40px;
+  max-width: 500px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+
+.search-job-btn {
+  background-color: var(--primary-green, #309689);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-job-btn:hover {
+  background-color: #26796e;
+}
